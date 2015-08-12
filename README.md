@@ -1,5 +1,8 @@
 # javascript-collection-paraphernalia
-Javascript collection utilities such as each, filter and find
+
+[![Build Status](https://travis-ci.org/any-code/javascript-collection-paraphernalia.svg?branch=master)](https://travis-ci.org/any-code/javascript-collection-paraphernalia)
+
+> Javascript collection utilities such as each, filter and find
 
 ## Getting Started
 
