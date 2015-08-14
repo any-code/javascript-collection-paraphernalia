@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/any-code/javascript-collection-paraphernalia.svg?branch=master)](https://travis-ci.org/any-code/javascript-collection-paraphernalia)
 
-> Javascript collection utilities such as each, filter and find
+> Javascript collection utilities such as each, filter and find for use with both object and array 
 
 ## Getting Started
 

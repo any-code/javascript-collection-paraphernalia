@@ -1,7 +1,7 @@
 {
   "name": "javascript-collection-paraphernalia",
-  "version": "1.0.0",
-  "description": "Javascript collection utilities such as each, filter and find",
+  "version": "1.0.1",
+  "description": "Javascript collection utilities such as each, filter and find for use with both object and array",
   "main": "index.js",
   "scripts": {
     "test": "nodeunit"
@@ -10,15 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/any-code/javascript-collection-paraphernalia.git"
   },
-  "keywords": [
-    "javascript",
-    "collection",
-    "list",
-    "array",
-    "each",
-    "filter",
-    "find"
-  ],
+  "keywords": ["collection", "each", "filter", "find", "array", "object", "list", "collection"],
   "author": "Lee Tagg <lee@anycode.io>",
   "license": "ISC",
   "bugs": {

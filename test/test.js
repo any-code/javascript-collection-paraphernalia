@@ -1,18 +1,42 @@
 var collection = require('../index'),
     objectCollection = { one: {id: 1}, two: {id: 2}, three: {id: 3}, four: {id: 4}},
+    objectCollectionLength = 4,
     arrayCollection = [{id: 1},{id: 2},{id: 3},{id: 4}];
 
 exports.testEachOfArray = function(test) {
     var visits = 0;
     collection.each(arrayCollection, function() { visits++; });
-    test.equals(visits, arrayCollection.length, "each item in the collection was not visited");
+    test.equals(visits, arrayCollection.length, arrayCollection.length + "items in the collection were only visited " +
+        visits + " times");
     test.done();
 };
 
 exports.testEachOfObject = function(test) {
     var visits = 0;
     collection.each(objectCollection, function() { visits++; });
-    test.equals(visits, arrayCollection.length, "each item in the collection was not visited");
+    test.equals(visits, objectCollectionLength, objectCollectionLength + "items in the collection were only visited " +
+        visits + " times");
+    test.done();
+};
+
+exports.testEachOfObjectWithNullValue = function(test) {
+    var visits = 0;
+    collection.each(null, function() { visits++; });
+    test.equals(visits, 0, "empty collection was visited " + visits + " times");
+    test.done();
+};
+
+exports.testEachOfObjectWithUndefinedValue = function(test) {
+    var visits = 0;
+    collection.each(undefined, function() { visits++; });
+    test.equals(visits, 0, "empty collection was visited " + visits + " times");
+    test.done();
+};
+
+exports.testEachOfObjectWithEmptyObjectValue = function(test) {
+    var visits = 0;
+    collection.each({}, function() { visits++; });
+    test.equals(visits, 0, "empty collection was visited " + visits + " times");
     test.done();
 };
 
