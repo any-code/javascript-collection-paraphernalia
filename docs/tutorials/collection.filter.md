@@ -31,7 +31,7 @@ Results:-
     ]
 
 
-Use collection to filter the properties of the object to an array    
+Use collection to filter the properties of the object to an object with keys corresponding to the original keys      
     
     var results = collection.filter(data, function(item) {
       return item.id > 2

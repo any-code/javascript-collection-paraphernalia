@@ -14,46 +14,91 @@ npm install javascript-collection-paraphernalia
 
 ### 2. Examples
 
-``` javascript
-var collection = require('javascript-collection-paraphernalia'),    
-    objectCollection = { one: {id: 1}, two: {id: 2}, three: {id: 3}, four: {id: 4}},
-    arrayCollection = [{id: 1},{id: 2},{id: 3},{id: 4}];
+Require javascript-collection-paraphernalia
+    
+    var collection = require('javascript-collection-paraphernalia')
+    
+Define an object to iterate over    
+    
+    var data = {
+        one: { id: 1, name: "ONE" },
+        two: { id: 2, name: "TWO" },
+        three: { id: 3, name: "THREE" },
+        four: { id: 4, name: "FOUR" }
+      }
 
-//Each Item in an Array
-collection.each(arrayCollection, function(index, item) { 
-    console.log("ITEM: ", index, item); 
-});
+#### collection.each example
 
-//Each Property on an Object
-collection.each(objectCollection, function(property, item) { 
-   console.log("ITEM: ", property, item);  
-});
+Use collection.each to iterate over the properties of the object executing the callback for each element    
+    
+    collection.each(data, function(index, item) {
+      console.log("I am item #%s", index, item)
+    })
 
-//Filter array by callback
-var filtered = collection.filter(arrayCollection, function(item) { 
-    return item.id === 3; 
-});
+Results:-
 
-//Filter object by callback resulting in an object
-var filtered = collection.filter(objectCollection, function(item) { 
-    return item.id === 3; 
-}, {});
+    I am item #one { id: 1, name: 'ONE' }
+    I am item #two { id: 2, name: 'TWO' }
+    I am item #three { id: 3, name: 'THREE' }
+    I am item #four { id: 4, name: 'FOUR' }
 
-//Filter object by callback resulting in an array
-var filtered = collection.filter(objectCollection, function(item) { 
-    return item.id === 3; 
-});
+#### collection.filter example
+    
+> collection.filter can be used to return an array or an object. This means it can be used to create a new object 
+containing a subset of properties
+    
+Use collection.filter to filter the properties of the object to an array    
+    
+    var results = collection.filter(data, function(item) {
+      return item.id > 2
+    })
 
-//Find item in an array
-var found = collection.find(arrayCollection, function(item) { 
-    return item.id === 3; 
-});
+Results:-
 
-//Find property on an object
-var found = collection.find(objectCollection, function(item) { 
-    return item.id === 3; 
-});
-```
+    [ 
+      { 
+        id: 3, 
+        name: 'THREE' 
+      }, { 
+        id: 4, 
+        name: 'FOUR' 
+      } 
+    ]
+
+
+Use collection.filter to filter the properties of the object to an object with keys corresponding to the original keys    
+    
+    var results = collection.filter(data, function(item) {
+      return item.id > 2
+    }, {})
+
+Results:-
+
+    { 
+      three: { 
+        id: 3, 
+        name: 'THREE' 
+      },
+      four: { 
+        id: 4, 
+        name: 'FOUR' 
+      }
+    }
+
+#### collection.find example
+    
+Use collection.find to find the first item matching the predicate callback  
+    
+    var results = collection.filter(data, function(item) {
+      return item.id > 2
+    })
+
+Results:-
+
+    { 
+      id: 3, 
+      name: 'THREE' 
+    }
 
 ## Copyright and license
 Copyright (c) 2015, Any Code <lee@anycode.io>
