@@ -25,7 +25,7 @@ Define an object to iterate over
 ``` javascript 
 var data = {
   one: { id: 1, name: "ONE" },
-  two: `{ id: 2, name: "TWO" },
+  two: { id: 2, name: "TWO" },
   three: { id: 3, name: "THREE" },
   four: { id: 4, name: "FOUR" }
 }

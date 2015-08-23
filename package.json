@@ -1,6 +1,6 @@
 {
   "name": "javascript-collection-paraphernalia",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript collection utilities such as each, filter and find for use with both object and array",
   "main": "index.js",
   "scripts": {
