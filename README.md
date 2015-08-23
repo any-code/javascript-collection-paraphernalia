@@ -16,24 +16,30 @@ npm install javascript-collection-paraphernalia
 
 Require javascript-collection-paraphernalia
     
-    var collection = require('javascript-collection-paraphernalia')
+``` javascript 
+var collection = require('javascript-collection-paraphernalia')
+```
     
 Define an object to iterate over    
     
-    var data = {
-        one: { id: 1, name: "ONE" },
-        two: { id: 2, name: "TWO" },
-        three: { id: 3, name: "THREE" },
-        four: { id: 4, name: "FOUR" }
-      }
+``` javascript 
+var data = {
+  one: { id: 1, name: "ONE" },
+  two: `{ id: 2, name: "TWO" },
+  three: { id: 3, name: "THREE" },
+  four: { id: 4, name: "FOUR" }
+}
+```
 
 #### collection.each example
 
 Use collection.each to iterate over the properties of the object executing the callback for each element    
     
-    collection.each(data, function(index, item) {
-      console.log("I am item #%s", index, item)
-    })
+``` javascript 
+collection.each(data, function(index, item) {
+  console.log("I am item #%s", index, item)
+})
+```
 
 Results:-
 
@@ -49,56 +55,67 @@ containing a subset of properties
     
 Use collection.filter to filter the properties of the object to an array    
     
-    var results = collection.filter(data, function(item) {
-      return item.id > 2
-    })
+``` javascript
+var results = collection.filter(data, function(item) {
+  return item.id > 2
+})
+```
 
 Results:-
 
-    [ 
-      { 
-        id: 3, 
-        name: 'THREE' 
-      }, { 
-        id: 4, 
-        name: 'FOUR' 
-      } 
-    ]
-
+``` javascript
+[ 
+  { 
+    id: 3, 
+    name: 'THREE' 
+  }, { 
+    id: 4, 
+    name: 'FOUR' 
+  } 
+]
+```
 
 Use collection.filter to filter the properties of the object to an object with keys corresponding to the original keys    
     
-    var results = collection.filter(data, function(item) {
-      return item.id > 2
-    }, {})
+``` javascript    
+var results = collection.filter(data, function(item) {
+  return item.id > 2
+}, {})
+```
 
 Results:-
 
-    { 
-      three: { 
-        id: 3, 
-        name: 'THREE' 
-      },
-      four: { 
-        id: 4, 
-        name: 'FOUR' 
-      }
-    }
+``` javascript
+{ 
+  three: { 
+    id: 3, 
+    name: 'THREE' 
+  },
+  four: { 
+    id: 4, 
+    name: 'FOUR' 
+  }
+}
+```
 
 #### collection.find example
     
 Use collection.find to find the first item matching the predicate callback  
     
-    var results = collection.filter(data, function(item) {
-      return item.id > 2
-    })
+``` javascript
+var results = collection.filter(data, function(item) {
+  return item.id > 2
+})
+```
 
 Results:-
 
-    { 
-      id: 3, 
-      name: 'THREE' 
-    }
+``` javascript
+{ 
+  id: 3, 
+  name: 'THREE' 
+}
+```
 
 ## Copyright and license
 Copyright (c) 2015, Any Code <lee@anycode.io>
